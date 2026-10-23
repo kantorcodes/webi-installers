@@ -39,6 +39,7 @@ __rmrf_local() {
                 gpg-pubkey \
                 gprox \
                 hexyl \
+                hol-guard-v* \
                 hugo \
                 iterm-color-schemes \
                 iterm-themes \
@@ -142,6 +143,7 @@ __rmrf_local() {
                 gpg-pubkey \
                 gprox \
                 hexyl \
+                hol-guard \
                 hugo \
                 iterm-color-schemes \
                 iterm-themes \
@@ -216,6 +218,11 @@ __rmrf_local() {
 }
 
 __test() {
+    if [ "$(uname -s)" = "Linux" ] && [ "$(uname -m)" = "x86_64" ] &&
+        getconf GNU_LIBC_VERSION > /dev/null 2>&1; then
+        webi hol-guard
+    fi
+
     webi \
         arc \
         archiver \
