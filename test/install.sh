@@ -221,8 +221,9 @@ __test() {
     if [ "$(uname -s)" = "Linux" ] && [ "$(uname -m)" = "x86_64" ] &&
         getconf GNU_LIBC_VERSION > /dev/null 2>&1; then
         webi hol-guard
-        # Check the installed binary is runnable without requiring its host glibc at test time.
+        # Check the binary actually starts; executable bits alone miss loader/ABI failures.
         test -x "$HOME/.local/bin/hol-guard"
+        "$HOME/.local/bin/hol-guard" --version > /dev/null
     fi
 
     webi \
