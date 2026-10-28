@@ -13,6 +13,7 @@ __init_hol_guard() {
     pkg_install() {
         mkdir -p "$(dirname "$pkg_src_cmd")"
         mv ./hol-guard-core-* "$pkg_src_cmd"
+        chmod a+x "$pkg_src_cmd"
     }
 
     pkg_get_current_version() {
