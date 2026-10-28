@@ -5,9 +5,11 @@ tagline: |
   HOL Guard: Inspect and control AI-agent actions
 ---
 
-This installer provides the official standalone `hol-guard` CLI for Linux x86-64
-with glibc. Version 3.54.0 requires glibc 2.35 or newer. macOS, Windows and
-musl-based systems are not included in this installer.
+This installer provides the official standalone `hol-guard` CLI for glibc-based
+Linux x86-64 using the upstream `x86_64-unknown-linux-gnu` release asset.
+Check the selected release's system requirements before installing, since the
+minimum supported glibc version can change between releases. macOS, Windows,
+musl-based systems and other CPU architectures are not included.
 
 To update or switch versions, run `webi hol-guard@stable`.
 
