@@ -4,6 +4,9 @@ set -u
 
 __init_hol_guard() {
     pkg_cmd_name="hol-guard"
+
+    # Release assets are standalone executables, not archives.
+    WEBI_SINGLE=true
     pkg_dst_cmd="$HOME/.local/bin/hol-guard"
     pkg_dst="$pkg_dst_cmd"
     pkg_src_cmd="$HOME/.local/opt/hol-guard-v$WEBI_VERSION/bin/hol-guard"
